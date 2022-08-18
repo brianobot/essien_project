@@ -1,0 +1,47 @@
+{% extends '_base/base.html' %}
+{% load static %}
+
+{% block title %} Create account {% endblock %}
+
+{% block container %}
+<header>
+  <div class="container">
+    <div id="branding">
+      <h1>
+        <span> 
+          <img src="% static 'images/favicon.ico' %}" alt="">
+        </span> Madonna University</h1>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="{% url 'account:login-account' %}"> Login</a></li>
+        <li><a href="{% url 'account:create-account' %}"> Sign Up</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="signup">
+    <h1>Sign Up Form</h1>
+
+    <form class="form-signup" method="post">
+      {% csrf_token %}
+      <label for="id_full_name" class="text-bold">Full Name: </label>
+      <input type="text" name="full_name" id="id_full_name" placeholder="Full Name">
+      
+      <label for="id_email" class="text-bold">Email: </label>
+      <input type="email" name="email" id="id_email" placeholder="Email">
+      
+      <label for="id_password1" class="text-bold">Password:</label>
+      <input type="password" name="password1" id="id_password1" placeholder="Password">
+      
+      <label for="id_password2" class="text-bold">Confirm Password</label>
+      <input type="password" name="password2" id="id_password2" placeholder="Repeat password">
+      
+      <button type="submit" name="signup-submit" class="btn btn-success w-100">SignUp</button>
+    </form>
+  </div>
+
+
+{% endblock %}

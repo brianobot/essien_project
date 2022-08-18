@@ -1,0 +1,294 @@
+
+/*--------------------------GENERAL--------------------------*/
+
+
+body{
+/*  background-color: lightblue;*/
+  background-image: url("../images/img1.jpg");
+  background-size: cover;
+  color:black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6em;
+  margin: 0;
+  border: 0;
+}
+
+ a{
+   text-decoration: none;
+   color: rgb(184, 178, 178);
+ }
+
+ a:hover{
+   color: blue;
+ }
+
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.signuperror{
+  color: red;
+  font-size: 36px;
+}
+
+.signupsuccess{
+  color: green;
+}
+
+/*---------------------------------HEADER-------------------------*/
+
+header{
+   background: white;
+   color: black;
+   padding-top: 30px;
+   min-height: 70px;
+   border-bottom: lightblue 3px solid;
+ }
+
+ header a{
+   color: black;
+   text-decoration: none;
+   text-transform: uppercase;
+ }
+
+  header ul{
+    margin: 0;
+    padding-left: 0;
+  }
+
+  header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+
+   header #branding{
+     float: left;
+   }
+
+   header #branding h1{
+     margin: 0;
+     padding-bottom: 30px;
+   }
+
+   header nav{
+     float: right;
+     margin-top: 20px;
+   }
+
+   header #branding img{
+     border-radius: 20px;
+   }
+
+/*-------------------------SHOWCASE-----------------------*/
+
+/*.show-case{
+  /* background-image: url('../images/img1.jpg');
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.show-case h1{
+  margin: 0;
+  padding: 50px 0 0 0;
+
+}
+
+*-----------------------------LOGIN FORM---------------------------*/
+
+.login-form{
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  position:absolute;
+  color: white;
+}
+
+.login-form h1{
+   font-size: 40px;
+   text-align: center;
+   text-transform: uppercase;
+   margin: 40px 0;
+}
+
+.login-form p{
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.login-form input{
+  font-size: 16px;
+  width: 100%;
+  padding: 15px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+}
+
+.login-form button{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border-radius: 5px;
+  border: 0;
+}
+
+/*------------------------------------------- SIGN UP --------------------------*/
+
+.signup{
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position:absolute;
+  color: black;
+}
+
+.signup h1{
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+}
+
+.signup p{
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.signup input{
+  font-size: 16px;
+  padding: 15px 10px;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.signup button{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border: 0;
+  border-radius: 5px;
+}
+
+.signup button :hover{
+  color: red;
+}
+
+/* ------------------------------------title---------------------------*/
+
+.title
+
+
+/*----------------------------------- home page showcase------------------------*/
+
+.home-body{
+  background-image: none;
+ /* background-color: white;*/
+}
+
+.show-case{
+  /* background-image: url('../images/img1.jpg');*/
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.show-case h1{
+  font-size: 50px;
+  margin: 0;
+  padding: 100px 0 0 0;
+  color: white;
+}
+
+.show-case h3{
+  color: white;
+  font-size: 30px;
+}
+
+.show-case p{
+  color: white;
+  font-size: 20px;
+}
+
+/*------------------------------MENU-----------------------------*/
+
+menu{
+  width: 100%;
+  height: 60px;
+  background-color: lightblue;
+  margin-top: 0;
+}
+
+/*menu h3{
+  color: #222;
+  font-size: 24px;
+  line-height: 55px;
+  float: left;
+  padding-right: 20px;
+}*/
+
+menu ul{
+  float: left;
+}
+
+menu ul li{
+  float: left;
+  list-style: none;
+  position: relative;
+}
+
+menu ul li a{
+  display: block;
+  font-size: 14px;
+  padding: 22px 14px;
+  text-decoration: none;
+  color: black;
+}
+
+menu ul li ul{
+  display: none;
+  position: absolute;
+  background-color: lightblue;
+  padding: 8px;
+  border-radius: 4px 4px 4px 4px;
+}
+
+menu ul li:hover ul{
+  display: block;
+
+}
+
+menu ul li ul li {
+  width: 180px;
+  border-radius: 4px;
+}
+
+menu ul li ul li a {
+  padding: 8px 14px;
+}
+
+menu ul li ul li a:hover {
+  background-color: aqua;
+}
+
+.home-h1{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.home-h3{
+  text-align: center;
+  font-size: 28px;
+}

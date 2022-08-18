@@ -1,0 +1,125 @@
+{% extends '_base/base.html' %}
+{% load static %}
+
+{% block title %} Madonna University E-Library {% endblock %}
+
+{% block container %}
+<header>
+    <div class="container">
+      <div id="branding">
+        <h1><span> <img src="{% static 'images/favicon.ico' %}" alt=""></span> Madonna University</h1>
+      </div>
+      <nav>
+        <ul>
+          <li> <a href="{% url 'library:homepage' %}">HOME</a></li>
+          <li> <a href="">About Us</a> </li>
+          <li> <a href="">Contact Us</a> </li>
+          {% if request.user.is_authenticated %}
+          <li> <a href="{% url 'account:logout-account' %}" class="btn btn-primary">Logout</a></li>
+          {% else %}
+          <li> <a href="{% url 'account:login-account' %}" class="btn btn-primary">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <menu>
+    <ul >
+        <li><a href="#">ALL Available Books</a></li>
+        <li><a href="#">Chemical Engineering</a>
+          <ul>
+            <li><a href="">ARTICLE'S</a></li>
+            <li><a href="">BOOKS</a></li>
+            <li><a href="">JOURNAL'S</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Computer Engineering </a>
+          <ul>
+            <li><a href="">ARTICLE'S </a></li>
+            <li><a href="">BOOKS </a></li>
+            <li> <a href="">JOURNAL'S</a></li>
+          </ul>
+        </li>
+          <li><a href="#">Civil Engineering</a>
+          <ul>
+              <li><a href=""> ARTICLE'S </a></li>
+              <li><a href=""> BOOKS </a></li>
+              <li><a href=""> JOURNAL'S </a></li>
+          </ul>
+        </li>
+        <li><a href="#">Electrical Engineering</a>
+          <ul>
+            <li><a href=""> ARTICLE'S </a></li>
+            <li><a href=""> BOOKS </a></li>
+            <li><a href=""> JOURNAL'S </a></li>
+          </ul>
+        </li>
+        <li><a href="#">FST</a>
+          <ul>
+              <li> <a href=""> ARTICLE'S </a> </li>
+              <li> <a href=""> BOOKS </a> </li>
+              <li> <a href=""> JOURNAL'S </a> </li>
+          </ul>
+        </li>
+        <li><a href="#">Mechanical Engineering </a>
+          <ul>
+              <li><a href=""> ARTICLE'S </a></li>
+              <li><a href=""> BOOKS </a></li>
+              <li><a href=""> JOURNAL'S </a></li>
+          </ul>
+        </li>
+    </ul>
+  </menu>
+     
+    <div class="container">
+      <form method="get">
+        <div class="d-flex w-100 justify-content-center">
+            <input type="text" name="search" id="search" class="form-control me-2" placeholder="Search Book titles, topics, phrases and author" style="height: 3rem;">
+            <button class="btn btn-success">Search</button>
+          </div>
+        </form>
+
+
+<div class="d-flex my-1 align-items-center">
+    <h2 class="dir ps-0">Book List/ search terms = <u>{{ search_word|lower }}</u></h2>
+</div>
+<hr class="my-2">
+
+{% if search_list %}
+<div class="row">
+        {% for book in search_list %}
+        <div class="col-6 col-md-6 col-lg-4 mb-3 hoverable">
+            <div class="card card-sm card-product-grid px-0 pt-2 mb-0" title="{{ book.title|title}}">
+                    <span class="card-img-hover img-wrap">
+                        <img src="{{ book.cover_image.url }}" class="img-fluid" style="height: 300px;">
+                    </span>
+                    
+                <hr class="m-0 mb-1">
+                <div class="card-body py-1 pt-0 px-2">
+                    <div>
+                        <p class="card-title fw-bold">
+                            <a href="" class="text-dark">Title: {{ book.title|title }}</a>
+                        </p>
+                    </div>
+                    <div class="my-0 fw-bold">
+                        <span class="px-0" style="font-size: 115%;">By {% for author in book.author.all %}{{ author }},{% endfor %}</span>
+                        <span class="mt-1 float-end text-muted" style="font-size: 12px;">Free copies: {{ book.copies }} </span>
+                    </div>
+                    <hr>
+                    <div>
+                      <a href="" class="btn btn-info" download>Download</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+      
+</div>
+{% else %}
+<h2 class="text-center py-5" style="font-size: 35px!important;line-height: 200%;">No book matching keyword =  {{ search_word|title }}. <br> <a href="{% url 'library:home' %}" class="text-primary">Continue reading!</a> </h2>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends '_base/base.html' %}
+{% load static %}
+
+{% block title %} Login account {% endblock %}
+
+{% block container %}
+<header>
+    <div class="container">
+        <div id="branding">
+        <h1>
+            <span> 
+            <img src="{% static 'images/favicon.ico' %}" alt="">
+            </span> Madonna University E-Library</h1>
+        </div>
+        
+        <nav>
+        <ul>
+            <li><a href="{% url 'account:login-account' %}"> Login</a></li>
+            <li><a href="{% url 'account:create-account' %}"> Sign Up</a></li>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="signup">
+    <h1>Login Up Form</h1>
+
+    <form class="form-signup" method="post">
+    {% csrf_token %}
+
+    <div class="text-center text-danger fw-bold">
+        <i class="icon-warning-sign"></i>{{ form.non_field_errors }}
+    </div>
+        
+    <label for="id_email">Email: </label>
+    <input type="email" name="email" id="id_email" placeholder="Email">
+    
+    <label for="id_password">Password:</label>
+    <input type="password" name="password" id="id_password" placeholder="Password">
+
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+</div>
+
+{% endblock %}
