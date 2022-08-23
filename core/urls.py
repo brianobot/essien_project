@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.admin import AdminSite
 
 # general settings for all admin pages registered in the project
-AdminSite.site_header = "MAadonna E-Library Admin"
+AdminSite.site_header = "Madonna E-Library Admin"
 AdminSite.index_title = "Madonna E-Library Admin Homepage"
 AdminSite.site_title = "Madonna E-Library Admin"
 
