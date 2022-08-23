@@ -1,5 +1,7 @@
+import re
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
+from django.contrib import messages
 from django.contrib.auth import views as auth_views
 from .forms import AuthenticationForm, CustomUserCreationForm
 
@@ -9,10 +11,11 @@ def sign_up_page(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Account Created Successfully")
             return redirect('account:login-account')
 
     form = CustomUserCreationForm()
-    return render(request, 'account/Sign-up.html')
+    return render(request, 'account/Sign-Up.html')
 
 
 class LoginPage(auth_views.LoginView):

@@ -25,6 +25,22 @@
 <div class="signup">
     <h1>Sign Up Form</h1>
 
+    {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+              {{ message }}
+          </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if form.non_field_errors %}
+      <div class="non-field-errors">
+        {% for err in form.non_field_errors %}
+          <p class="form-error">{{ err }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <form class="form-signup" method="post">
       {% csrf_token %}
       <label for="id_full_name" class="text-bold">Full Name: </label>
